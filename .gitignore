@@ -7,8 +7,8 @@ bower_components/
 source/
 !source/README.md
 
-# 只留下 public 裡的最終輸出
-public/panos/*
-!public/panos/preview.jpg
-public/videos/*
-public/photos/*
+# 只留下 docs 裡的最終輸出
+docs/panos/*
+!docs/panos/preview.jpg
+docs/videos/*
+docs/photos/*

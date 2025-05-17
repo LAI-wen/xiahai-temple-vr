@@ -12,7 +12,7 @@ gulp.task("concat", function () {
     .src("./source/js/**/*.js")
     .pipe(concat("all.js"))
     .pipe(uglify())
-    .pipe(gulp.dest("./public/javascripts"));
+    .pipe(gulp.dest("./docs/javascripts"));
 });
 gulp.task("dist:css", function () {
   return gulp
@@ -35,7 +35,7 @@ gulp.task("sass", function () {
         outputStyle: "compressed",
       })
     )
-    .pipe(gulp.dest("./public/stylesheets"));
+    .pipe(gulp.dest("./docs/stylesheets"));
 });
 // 創建gulp任務 js 套件
 var vendorjs = [
@@ -50,13 +50,13 @@ var vendorjs = [
 //   return gulp
 //     .src("./source/App.js")
 //     .pipe(react())
-//     .pipe(gulp.dest("./public/javascripts"));
+//     .pipe(gulp.dest("./docs/javascripts"));
 // });
 gulp.task("vendor", function () {
   return gulp
     .src(vendorjs)
     .pipe(concat("vendor.js"))
-    .pipe(gulp.dest("./public/javascripts"));
+    .pipe(gulp.dest("./docs/javascripts"));
 });
 
 // 監聽任務
@@ -72,10 +72,10 @@ var browserSync = require("browser-sync").create();
 
 // 新增 serve 任務
 gulp.task("serve", function () {
-  // 初始化本地伺服器，root 指向 public（原始打錯應是 public）
+  // 初始化本地伺服器，root 指向 docs（原始打錯應是 docs）
   browserSync.init({
     server: {
-      baseDir: "./public", // ← 確認你的 HTML 是否在這裡
+      baseDir: "./docs", // ← 確認你的 HTML 是否在這裡
     },
     port: 3000,
     open: true, // 啟動時自動開瀏覽器
@@ -88,7 +88,7 @@ gulp.task("serve", function () {
   gulp
     .watch("./source/scss/**/*.scss", gulp.series("sass"))
     .on("change", browserSync.reload);
-  gulp.watch("./public/**/*.html").on("change", browserSync.reload);
+  gulp.watch("./docs/**/*.html").on("change", browserSync.reload);
 });
 
 // 新增 build 任務，匯出靜態檔案
@@ -97,6 +97,6 @@ gulp.task(
   gulp.series("concat", "sass", "vendor", function copyHtml() {
     return gulp
       .src("./source/**/*.html") // 假設你 html 寫在 source 裡
-      .pipe(gulp.dest("./public"));
+      .pipe(gulp.dest("./docs"));
   })
 );
