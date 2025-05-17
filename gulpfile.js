@@ -12,7 +12,7 @@ gulp.task("concat", function () {
     .src("./source/js/**/*.js")
     .pipe(concat("all.js"))
     .pipe(uglify())
-    .pipe(gulp.dest("./pudlic/javascripts"));
+    .pipe(gulp.dest("./public/javascripts"));
 });
 gulp.task("dist:css", function () {
   return gulp
@@ -35,7 +35,7 @@ gulp.task("sass", function () {
         outputStyle: "compressed",
       })
     )
-    .pipe(gulp.dest("./pudlic/stylesheets"));
+    .pipe(gulp.dest("./public/stylesheets"));
 });
 // 創建gulp任務 js 套件
 var vendorjs = [
@@ -46,17 +46,17 @@ var vendorjs = [
   "node_modules/node-waves/dist/waves.min.js",
 ];
 // 創建gulp任務 react
-gulp.task("jsx", function () {
-  return gulp
-    .src("./source/App.js")
-    .pipe(react())
-    .pipe(gulp.dest("./pudlic/javascripts"));
-});
+// gulp.task("jsx", function () {
+//   return gulp
+//     .src("./source/App.js")
+//     .pipe(react())
+//     .pipe(gulp.dest("./public/javascripts"));
+// });
 gulp.task("vendor", function () {
   return gulp
     .src(vendorjs)
     .pipe(concat("vendor.js"))
-    .pipe(gulp.dest("./pudlic/javascripts"));
+    .pipe(gulp.dest("./public/javascripts"));
 });
 
 // 監聽任務
@@ -66,16 +66,16 @@ gulp.task("watch", function () {
 });
 
 // 創建gulp全部任務
-gulp.task("default", gulp.series("concat", "sass", "vendor", "watch", "jsx"));
+gulp.task("default", gulp.series("concat", "sass", "vendor", "watch"));
 
 var browserSync = require("browser-sync").create();
 
 // 新增 serve 任務
 gulp.task("serve", function () {
-  // 初始化本地伺服器，root 指向 pudlic（原始打錯應是 public）
+  // 初始化本地伺服器，root 指向 public（原始打錯應是 public）
   browserSync.init({
     server: {
-      baseDir: "./pudlic", // ← 確認你的 HTML 是否在這裡
+      baseDir: "./public", // ← 確認你的 HTML 是否在這裡
     },
     port: 3000,
     open: true, // 啟動時自動開瀏覽器
@@ -88,5 +88,15 @@ gulp.task("serve", function () {
   gulp
     .watch("./source/scss/**/*.scss", gulp.series("sass"))
     .on("change", browserSync.reload);
-  gulp.watch("./pudlic/**/*.html").on("change", browserSync.reload);
+  gulp.watch("./public/**/*.html").on("change", browserSync.reload);
 });
+
+// 新增 build 任務，匯出靜態檔案
+gulp.task(
+  "build",
+  gulp.series("concat", "sass", "vendor", function copyHtml() {
+    return gulp
+      .src("./source/**/*.html") // 假設你 html 寫在 source 裡
+      .pipe(gulp.dest("./public"));
+  })
+);

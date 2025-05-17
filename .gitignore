@@ -1,40 +1,14 @@
-# Node.js modules
 node_modules/
-
-# Bower components
 bower_components/
-
-# Output / build folders (若有)
-dist/
-build/
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# OS 系統檔
 .DS_Store
-Thumbs.db
+*.log
 
-# IDE/編輯器設定
-.vscode/
-.idea/
+# 不要 push 原始素材或中繼輸出
+source/
+!source/README.md
 
-# Gulp 暫存檔（視情況忽略）
-.cache/
-.tmp/
-
-# 上傳圖片或影片（如果不是程式碼的一部分）
-# *.mp4
-# *.mov
-# *.avi
-# *.png
-# *.jpg
-# *.jpeg
-# *.webp
-# *.gif
-
-# 其他
-.env
-*.bak
+# 只留下 public 裡的最終輸出
+public/panos/*
+!public/panos/preview.jpg
+public/videos/*
+public/photos/*
