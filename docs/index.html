@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Paper 首頁</title>
+<!-- InstanceEndEditable -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+<meta name="keywords" content="大稻埕">
+<meta name="description" content="大稻埕">
+<meta property="og:title" content="大稻埕" />
+<meta property="og:site_name" content="" />
+<meta property="og:description" content="大稻埕" />
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="" />
+<!-- pwa -->
+	<link rel="manifest" href="manifest.json">
+	<!-- pwa safari -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="大稻埕">
+	<link rel="apple-touch-icon" href="image/icon-192x192.png" sizes="192x192">
+	<link rel="apple-touch-icon" href="image/icon-512x512.png" sizes="512x512">
+	<!-- pwa ie -->
+	<meta name="msapplication-TileImage" content="image/icon-192x192.png">
+	<meta name="msapplication-TileColor" content="#fff">
+	<meta name="theme-color" content="#3f51b5">
+<!-- favicon.ico -->	
+<link rel="shortcut icon" type="image/png" href="image/icon-192x192.png"/>	
+<!-- css -->
+<link rel="stylesheet" type="text/css" href="stylesheets/locomotive-scroll.min.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/st.css">
+ <!-- js -->
+<script type="text/javascript" src="javascripts/vendor.js"></script>
+<script type="text/javascript" src="javascripts/all.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X1JCBFN6X2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-X1JCBFN6X2');
+	$(document).ready(function() {
+        $(document).on('click', '.ga_btn', function(event) {
+        	//event.preventDefault();
+        	var type = $(this).data('types');	
+            gtag('event', '點擊' +type , {
+             'event_category': 'Click',
+             'event_label': '點擊按鈕',
+             'value': 0
+            });
+            console.log('加載成功'+type)
+        });
+    });
+	function reurl() {
+	  url = location.href; //把當前頁面的地址賦給變數 url
+	  var times = url.split("?"); //分切變數 url 分隔符號為 "?"
+
+	  if (times[1] != 1) { //如果?後的值不等於1表示沒有重新整理
+
+	      url += "?1"; //把變數 url 的值加入 ?1
+
+	      self.location.replace(url); //重新整理頁面
+
+	  }
+	} 	
+</script>
+</head>
+
+<body onload="reurl()">
+
+<header class="warp m_menu">
+	<div class="header ind">
+		<a href="index.html">
+			<div class="logo">
+				<i></i>
+			</div>
+		</a>
+		<ul class="menu">
+			
+			<li><a class="ga_btn" data-types="首頁_mu>聯絡我們"  href="page/contact_us.html">聯絡我們</a></li>
+			<li><a class="ga_btn" data-types="首頁_mu>VR體驗"  href="street_vr/tour.html">VR體驗</a></li>
+		</ul>
+    	
+		<div class="hamburger hamburger--slider js-hamburger showmenu">
+		  <div class="hamburger-box">
+		    <div class="hamburger-inner"></div>
+		  </div>
+		</div>
+    </div>
+</header>
+<div class="pageLoading">
+	<div>
+		<i class="logoLoading"></i>
+        <div class="loading-2">
+            <div class="bar"></div>
+        </div>
+	</div>
+</div>
+<div id="js-scroll" data-scroll-container>
+	<section class="banner_area" data-scroll-section>
+		<div class="banner_bg_top" data-scroll></div>
+
+		<div class="t_box ind">
+			<h1  data-scroll data-scroll-speed="1">
+				2025<br>
+				從城隍守護到月老牽線<br>IN TAPEI
+			</h1>
+			<h2  data-scroll data-scroll-speed="1">
+				走進台北霞海城隍廟
+			</h2>
+			<a class="btn_w btn ga_btn" data-types="首頁>VR體驗" href="street_vr/tour.html" >
+				VR
+			</a>
+		</div>
+		<div class="banner_bg_2" data-scroll data-scroll-speed="2"></div>
+		<div class="banner_bg" data-scroll ></div>
+		
+	</section>
+	<section class="features_area" data-scroll-section>
+		<ul>
+			<li data-scroll data-scroll-speed="1">
+				<a class="btn ga_btn"  data-types="首頁_特色說明>關於我們_1" href="">
+					<i class="features_i_1" data-scroll  data-scroll-speed="0.5" ></i>
+					<h3>霞海城隍廟</h3>
+					<p>台北霞海城隍廟為內政部核定之三級古蹟，源自福建霞城，百年來香火不斷，守護大稻埕的士農工商，成為城市中極具代表性的在地信仰場域。
+</p>
+					<div class="btn_down" href=""></div>
+				</a>
+				
+			</li>
+			<li data-scroll data-scroll-speed="1">
+				<a class="btn ga_btn" data-types="首頁_特色說明>關於我們_2"  href="">
+					<i class="features_i_2" data-scroll  data-scroll-delay="0.2" data-scroll-speed="0.5" ></i>
+					<h3>關於月老與儀式</h3>
+					<p>月下老人又稱「月老尊神」，簡稱「月老」，被視為掌管人們姻緣之神。</p>
+					<div class="btn_down" href=""></div>
+				</a>
+			</li>
+			<!-- <li data-scroll data-scroll-speed="1">
+				<a class="btn ga_btn" data-types="首頁_特色說明>關於我們_3" href="">
+					<i class="features_i_3" data-scroll  data-scroll-delay="0.2" data-scroll-speed="0.5" ></i>
+					<h3>特色商行</h3>
+					<p>大稻埕成為商貿繁榮、人文薈萃之地</p>
+					<div class="btn_down" href=""></div>
+				</a>
+			</li> -->
+			<!-- <li data-scroll data-scroll-speed="1">
+				<a class="btn ga_btn" data-types="首頁_特色說明>關於我們_4"  href="">
+					<i class="features_i_4" data-scroll  data-scroll-delay="0.2" data-scroll-speed="0.5" ></i>
+					<h3>特色景點</h3>
+					<p>大稻埕成為商貿繁榮、人文薈萃之地</p>
+					<div class="btn_down" href=""></div>
+				</a>
+			</li> -->
+		</ul>
+		<div class="font_box">
+			<h4 data-scroll data-scroll-speed="0.5">特色說明</h4>
+			<h3 data-scroll data-scroll-speed="0.8">FEATURES</h3>
+		</div>	
+	</section>
+	<section class="introduction_area" data-scroll-section>
+		<div class="area1">
+			<div data-scroll data-scroll-speed="1">
+				<h5>TAIPEI Xia-Hai City God Temple</h5>
+				<h4>走進台北霞海城隍廟<br>地理導覽</h4>
+				<hr>
+				<p>
+					台北霞海城隍廟為內政部核定之三級古蹟，源自福建霞城，百年來香火不斷，守護大稻埕的士農工商，成為城市中極具代表性的在地信仰場域。
+				</p>
+				<a class="area_btn_b btn ga_btn" data-types="首頁_地理導覽>VR體驗" href="street_vr/tour.html">
+					VR 體驗
+				</a>
+			</div>
+			<img src="image/pic_1.jpg" alt="" data-scroll data-scroll-speed="3">
+		</div>
+		<div class="area2">
+			<div data-scroll data-scroll-speed="2">
+				<img src="image/pic_2.jpg" alt="">
+			</div>
+			<div class="area2_txt" data-scroll data-scroll-speed="1">
+				<div>
+					<h4>大稻埕時空隧道-文化導覽</h4>
+					<p>您可以漫步在迪化街、或在慈聖宮前的小吃攤品味在地美食，踏入巷弄裡逛逛各具風格的選物文創小店，坐在典雅懷古的街屋中喝杯咖啡享受悠閒時光，想體會臺北傳統生活，來臺北絕對不能錯過大稻埕！</p>
+				</div>
+				<ul >
+					<li>
+						<p>創業基地</p>
+						<p>78 м²<br><span>時空隧道臺北大稻埕時空隧道臺北大稻埕</span></p>
+						<p>179,8 м²<br><span>時空隧道臺北大稻埕</span></p>
+					</li>
+					<li>
+						<p>文化基地</p>
+						<p>78 м²<br><span>時空隧道臺北大稻埕時空隧道臺北大稻埕</span></p>
+						<p>179,8 м²<br><span>時空隧道臺北大稻埕</span></p>
+					</li>
+					<li>
+						<p>時光隧道</p>
+						<p>78 м²<br><span>時空隧道臺北大稻埕時空隧道臺北大稻埕</span></p>
+						<p>179,8 м²<br><span>時空隧道臺北大稻埕</span></p>
+					</li>
+				</ul>
+				<a class="area_btn_b btn ga_btn" data-types="首頁_文化導覽>VR體驗" href="street_vr/tour.html">
+					VR 體驗
+				</a>
+			</div>
+		</div>
+	</section>
+	<section class="vr_area" data-scroll-section>
+		<div class="vr_area_box" data-scroll data-scroll-speed="1">
+			<a class="ga_btn" data-types="首頁_中間大圖區>VR體驗" href="street_vr/tour.html">
+				<img src="image/pic_3.jpg" alt="">
+			</a>
+		</div>
+		<div class="font_box" data-scroll data-scroll-speed="2">
+			<h4>歷史導覽</h4>
+			<h3>HISTORY</h3>
+		</div>
+		<div class="box">
+			<div>
+				<i></i>
+				<h3>特色說明</h3>
+				<p>大稻埕成為商貿繁榮</p>
+			</div>
+			<div>
+				<i class="i_2"></i>
+				<h3>特色說明</h3>
+				<p>大稻埕成為商貿繁榮</p>
+			</div>
+		</div>
+		<a class="area_btn_w btn ga_btn" data-types="首頁_歷史導覽>VR體驗" href="street_vr/tour.html">
+			VR 體驗
+		</a>
+	</section>
+	<footer data-scroll-section> 
+		<p class="footer-copyright">Copyright © 2020 123. All rights reserved</p>
+	</footer>
+</div>
+<!-- pwa -->
+<script type="text/javascript" src="javascripts/pwa.js"></script>
+</html>

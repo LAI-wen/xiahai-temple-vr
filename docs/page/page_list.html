@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Paper</title>
+<!-- InstanceEndEditable -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+<meta name="keywords" content="大稻埕">
+<meta name="description" content="大稻埕">
+<meta property="og:title" content="大稻埕" />
+<meta property="og:site_name" content="" />
+<meta property="og:description" content="大稻埕" />
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="" />
+<!-- pwa -->
+	<link rel="manifest" href="../manifest.json">
+	<!-- pwa safari -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="大稻埕">
+	<link rel="apple-touch-icon" href="../image/icon-192x192.png" sizes="192x192">
+	<link rel="apple-touch-icon" href="../image/icon-512x512.png" sizes="512x512">
+	<!-- pwa ie -->
+	<meta name="msapplication-TileImage" content="../image/icon-192x192.png">
+	<meta name="msapplication-TileColor" content="#fff">
+	<meta name="theme-color" content="#3f51b5">
+<!-- favicon.ico -->	
+<link rel="shortcut icon" type="image/png" href="../image/icon-192x192.png"/>	
+<!-- css -->	
+<link rel="stylesheet" type="text/css" href="../stylesheets/st.css">
+<!-- js -->
+<script type="text/javascript" src="../javascripts/vendor.js"></script>
+<script type="text/javascript" src="../javascripts/all.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X1JCBFN6X2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-X1JCBFN6X2');
+	$(document).ready(function() {
+        $(document).on('click', '.ga_btn', function(event) {
+        	//event.preventDefault();
+        	var type = $(this).data('types');	
+            gtag('event', '點擊' +type , {
+             'event_category': 'Click',
+             'event_label': '點擊按鈕',
+             'value': 0
+            });
+            console.log('加載成功'+type)
+        });
+    });	
+</script>
+
+</head>
+<body>
+<header class="warp m_menu" >
+	<div class="header"  >
+		<a class="ga_btn" data-types="商城簡介_mu>回首頁" href="../index.html">
+			<div class="logo">
+				<i></i>
+			</div>
+		</a>
+		<ul class="menu">
+			<li><a class="ga_btn" data-types="商城簡介_mu>聯絡我們" href="contact_us.html">聯絡我們</a></li>
+			<li><a class="ga_btn" data-types="商城簡介_mu>VR體驗" href="../viewer/examples/webvr/index.html">VR體驗</a></li>
+		</ul>
+		<div class="hamburger hamburger--slider js-hamburger showmenu">
+		  <div class="hamburger-box">
+		    <div class="hamburger-inner"></div>
+		  </div>
+		</div>
+    </div>
+</header>
+<div id="js-scroll" data-scroll-container>
+	<section class="banner_area page"  >
+		<div class="t_box" data-scroll-section>
+			<h1>
+				INTRODUCTION
+			</h1>
+		</div>
+	</section>	
+	<section class="introduction_area page">
+		<div class="area1">
+			<div>
+				<h5>SIGNIFICANCE</h5>
+				<h4>全臺最大交通樞紐<br>最大交通樞紐</h4>
+				<hr>
+				<p>
+					臺北位於市民大道以南、以重慶北路分為東西兩側基地，基地東側鄰近交通樞紐之臺北車站及臺北轉運站，基地西側及南側則與北門、三井倉庫、臺北郵局及鐵道園區等歷史古蹟群為鄰，可串聯起西區歷史與現代發展之脈絡，集商務、旅遊、消費、觀光等特色於一體。
+				</p>
+			</div>
+		</div>
+		<div class="area2">
+			<div>
+				<img src="../image/pic_2.jpg" alt="">
+			</div>
+			<div class="area2_txt">
+				<div>
+					<h4>全臺最大交通樞紐串連臺北都會區</h4>
+					<p>臺北位於市民大道以南、以重慶北路分為東西兩側基地，基地東側鄰近交通樞紐之臺北車站及臺北轉運站，基地西側及南側則與北門、三井倉庫。</p>
+				</div>
+				<ul >
+					<li>
+						<p>臺北都會區</p>
+						<p>78 м²<br><span>臺北位於市民大道以南</span></p>
+						<p>179,8 м²<br><span>臺北位於市民大道</span></p>
+					</li>
+					<li>
+						<p>臺北都會區</p>
+						<p>78 м²<br><span>臺北位於市民大道以南</span></p>
+						<p>179,8 м²<br><span>臺北位於市民大道</span></p>
+					</li>
+					<li>
+						<p>臺北都會區</p>
+						<p>78 м²<br><span>臺北位於市民大道以南</span></p>
+						<p>179,8 м²<br><span>臺北位於市民大道</span></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section class="vr_area page">
+		<div class="page_area">
+			<div>
+				<h5>SIGNIFICANCE</h5>
+				<h4>全臺最大交通樞紐<br>最大交通樞紐</h4>
+				<hr>
+				<p>
+					臺北位於市民大道以南、以重慶北路分為東西兩側基地，基地東側鄰近交通樞紐之臺北車站及臺北轉運站，基地西側及南側則與北門、三井倉庫、臺北郵局及鐵道園區等歷史古蹟群為鄰，可串聯起西區歷史與現代發展之脈絡，集商務、旅遊、消費、觀光等特色於一體。
+				</p>
+				<a class="area_btn_w ga_btn" data-types="商城簡介>" href="page.html">
+					MORE
+				</a>
+			</div>
+			<img src="../image/page_pic2.jpg" alt="">
+		</div>
+	</section>
+	<footer> 
+		<p class="footer-copyright">Copyright © 2020 123. All rights reserved</p>
+	</footer>
+</div>
+
+<!-- pwa -->
+<script type="text/javascript" src="../javascripts/pwa.js"></script>
+</html>

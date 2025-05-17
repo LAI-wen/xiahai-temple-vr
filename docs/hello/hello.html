@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Paper</title>
+    <!-- InstanceEndEditable -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=0"
+    />
+    <meta name="keywords" content="新零售" />
+    <meta name="description" content="新零售" />
+    <meta property="og:title" content="新零售" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="新零售" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <!-- pwa -->
+    <link rel="manifest" href="../manifest.json" />
+    <!-- pwa safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="新零售" />
+    <link
+      rel="apple-touch-icon"
+      href="../image/icon-192x192.png"
+      sizes="192x192"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="../image/icon-512x512.png"
+      sizes="512x512"
+    />
+    <!-- pwa ie -->
+    <meta name="msapplication-TileImage" content="../image/icon-192x192.png" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="theme-color" content="#3f51b5" />
+    <!-- favicon.ico -->
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../image/icon-192x192.png"
+    />
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="../stylesheets/st.css" />
+    <script src="../javascripts/pixi/pixi.min.js"></script>
+    <script type="text/javascript" src="../javascripts/vendor.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-X1JCBFN6X2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-X1JCBFN6X2");
+      $(document).ready(function () {
+        $(document).on("click", ".ga_btn", function (event) {
+          //event.preventDefault();
+          var type = $(this).data("types");
+          gtag("event", "點擊" + type, {
+            event_category: "Click",
+            event_label: "點擊按鈕",
+            value: 0,
+          });
+          console.log("加載成功" + type);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header class="warp">
+      <div class="header">
+        <a href="../index.html">
+          <div class="logo">
+            <i></i>
+          </div>
+        </a>
+        <ul class="menu">
+          <li>
+            <a class="ga_btn" data-types="VR體驗" href="../street_vr/tour.html"
+              >VR體驗</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div class="back">
+      <div class="t_box">
+        <h1>
+          2025<br />
+          從城隍守護到月老牽線<br />
+          IN TAPEI
+        </h1>
+        <h2>走進台北霞海城隍廟</h2>
+        <a data-types="進入首頁" class="btn_w btn ga_btn" href="../index.html">
+          MORE
+        </a>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var app = new PIXI.Application({
+        view: document.getElementById("main"),
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+      document.body.appendChild(app.view);
+      const background = PIXI.Sprite.from("../image/bg.jpg");
+      background.width = app.screen.width;
+      background.height = app.screen.height;
+      app.stage.addChild(background);
+      // Inner radius of the circle
+      const radius = 250;
+
+      // The blur amount
+      const blurSize = 24;
+      // PIXI init
+
+      app.loader.add("spotlight", "../image/bg_spotlight.jpg");
+      app.loader.load(setup);
+
+      function setup(loader, resources) {
+        const background = new PIXI.Sprite(resources.spotlight.texture);
+
+        app.stage.addChild(background);
+        background.width = app.screen.width;
+        background.height = app.screen.height;
+
+        const circle = new PIXI.Graphics()
+          .beginFill(0xff0000)
+          .drawCircle(radius + blurSize, radius + blurSize, radius)
+          .endFill();
+        circle.filters = [new PIXI.filters.BlurFilter(blurSize / 2)];
+
+        const bounds = new PIXI.Rectangle(
+          0,
+          0,
+          (radius + blurSize) * 10,
+          (radius + blurSize) * 10
+        );
+        const texture = app.renderer.generateTexture(
+          circle,
+          PIXI.SCALE_MODES.NEAREST,
+          1,
+          bounds
+        );
+        const focus = new PIXI.Sprite(texture);
+
+        app.stage.addChild(focus);
+        background.mask = focus;
+
+        app.stage.interactive = true;
+        app.stage.on("mousemove", pointerMove);
+
+        function pointerMove(event) {
+          focus.position.x = event.data.global.x - focus.width / 2;
+          focus.position.y = event.data.global.y - focus.height / 2;
+        }
+      }
+    </script>
+    <!-- pwa -->
+    <script type="text/javascript" src="../javascripts/pwa.js"></script>
+  </body>
+</html>
