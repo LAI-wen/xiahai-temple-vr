@@ -1,0 +1,40 @@
+# Node.js modules
+node_modules/
+
+# Bower components
+bower_components/
+
+# Output / build folders (若有)
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS 系統檔
+.DS_Store
+Thumbs.db
+
+# IDE/編輯器設定
+.vscode/
+.idea/
+
+# Gulp 暫存檔（視情況忽略）
+.cache/
+.tmp/
+
+# 上傳圖片或影片（如果不是程式碼的一部分）
+# *.mp4
+# *.mov
+# *.avi
+# *.png
+# *.jpg
+# *.jpeg
+# *.webp
+# *.gif
+
+# 其他
+.env
+*.bak

@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Paper 聯絡我們</title>
+<!-- InstanceEndEditable -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+<meta name="keywords" content="大稻埕">
+<meta name="description" content="大稻埕">
+<meta property="og:title" content="大稻埕" />
+<meta property="og:site_name" content="" />
+<meta property="og:description" content="大稻埕" />
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="" />
+<!-- pwa -->
+	<link rel="manifest" href="../manifest.json">
+	<!-- pwa safari -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="大稻埕">
+	<link rel="apple-touch-icon" href="../image/icon-192x192.png" sizes="192x192">
+	<link rel="apple-touch-icon" href="../image/icon-512x512.png" sizes="512x512">
+	<!-- pwa ie -->
+	<meta name="msapplication-TileImage" content="../image/icon-192x192.png">
+	<meta name="msapplication-TileColor" content="#fff">
+	<meta name="theme-color" content="#3f51b5">
+<!-- favicon.ico -->	
+<link rel="shortcut icon" type="image/png" href="../image/icon-192x192.png"/>
+<link rel="stylesheet" type="text/css" href="../stylesheets/st.css">
+<!-- js -->
+<script type="text/javascript" src="../javascripts/vendor.js"></script>
+<script type="text/javascript" src="../javascripts/all.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X1JCBFN6X2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-X1JCBFN6X2');
+	$(document).ready(function() {
+        $(document).on('click', '.ga_btn', function(event) {
+        	//event.preventDefault();
+        	var type = $(this).data('types');	
+            gtag('event', '點擊' +type , {
+             'event_category': 'Click',
+             'event_label': '點擊按鈕',
+             'value': 0
+            });
+            console.log('加載成功'+type)
+        });
+    });	
+</script>
+
+</head>
+
+<body>
+<header class="warp m_menu">
+	<div class="header">
+		<a class="ga_btn" data-types="聯絡我們_mu>回首頁" href="../index.html">
+			<div class="logo">
+				<i></i>
+			</div>
+		</a>
+		<ul class="menu">
+			<li><a class="ga_btn" data-types="聯絡我們_mu>聯絡我們" href="contact_us.html">聯絡我們</a></li>
+			<li><a class="ga_btn" data-types="聯絡我們_mu>VR體驗" href="../street_vr/tour.html">VR體驗</a></li>
+		</ul>
+    	
+		<div class="hamburger hamburger--slider js-hamburger showmenu">
+		  <div class="hamburger-box">
+		    <div class="hamburger-inner"></div>
+		  </div>
+		</div>
+    </div>
+</header>
+<div id="js-scroll" data-scroll-container>
+	<section class="banner_area page">
+		<div class="t_box" data-scroll-section>
+			<h1>
+				CONTACT US
+			</h1>
+		</div>
+	</section>	
+	<section class="introduction_area page con">
+		<div class="area1">
+			<div class="txt_con">
+				<h5>CONTACT US</h5>
+				<h4>聯絡我們</h4>
+				<hr>
+				<p>
+					地址：台北市台北市台北市台北市台北市
+				</p>
+				<a href="">客服電話：+88609123456</a>
+				<a href="">信箱：a12345678@gmail.com</a>
+				<a href="">Facebook：bookbook</a>
+				<a class="area_btn_b ga_btn" data-types="聯絡我們>LINE" target="_blank" href="https://lin.ee/EK6wuf3">
+					LINE
+				</a>
+			</div>
+			<div class="con_map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14456.713232321394!2d121.54841739999998!3d25.06194495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-TW!2stw!4v1612188968127!5m2!1szh-TW!2stw" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+			</div>
+		</div>
+	</section>
+</div>
+<footer> 
+	<p class="footer-copyright">Copyright © 2020 123. All rights reserved</p>
+</footer>
+<!-- pwa -->
+<script type="text/javascript" src="../javascripts/pwa.js"></script>
+</html>
